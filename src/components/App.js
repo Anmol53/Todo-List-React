@@ -3,22 +3,24 @@ import "./../styles/App.css";
 import Task from "./Task/";
 import './style.css';
 
-function App()
-{
+function App(){
 	const [newTask, setNewTask] = useState("");
 	const [tasks, setTasks] = useState([]);
 	const [list, setList] = useState();
 	const add = () => {
-		const temp = tasks;
-		temp.push(newTask);
-		setTasks(temp);
-		setList(renderList());
+		if(newTask != ""){
+			const temp = tasks;
+			temp.push(newTask);
+			setTasks(temp);
+			setList(renderList());
+			setNewTask("");
+		}
 	}
 	const deleteItem = (i) => {
 		console.log(i);
 		const temp = tasks;
 		if (i > -1) {
-		  temp.splice(i, 1);
+			temp.splice(i, 1);
 		}
 		setTasks(temp);
 		console.log("In delete " + tasks);
@@ -26,8 +28,8 @@ function App()
 	}
 
 	const updateNewTask = ({ target }) => {
-    setNewTask(target.value)
-  }
+		setNewTask(target.value)
+	}
 
 	const renderList = () => {
 		console.log(tasks);
@@ -48,7 +50,7 @@ function App()
 			<h1 className="heading">To Do List</h1>
 			{list}
 			<div className="inputField">
-				<input id="task" className="text-input-1" onChange={updateNewTask} placeholder="Enter new item here" autoFocus />
+				<input id="task" className="text-input-1" onChange={updateNewTask} placeholder="Enter new item here" autoFocus value={newTask}/>
 				<button id="btn" className="btn btn-right btn-blue" onClick={add}>Add</button>
 			</div>
 			<link rel="preconnect" href="https://fonts.gstatic.com" />
