@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./../styles/App.css";
-import Task from "./Task";
+import Task from "./Task/";
+import './style.css';
 
 function App()
 {
@@ -14,11 +15,13 @@ function App()
 		setList(renderList());
 	}
 	const deleteItem = (i) => {
+		console.log(i);
 		const temp = tasks;
 		if (i > -1) {
 		  temp.splice(i, 1);
 		}
 		setTasks(temp);
+		console.log("In delete " + tasks);
 		setList(renderList());
 	}
 
@@ -27,6 +30,7 @@ function App()
   }
 
 	const renderList = () => {
+		console.log(tasks);
 		return (
 			<ul>
 			{
@@ -40,11 +44,16 @@ function App()
 		);
 	}
 	return (
-	<div id="main">
-	{list}
-	<input id="task" onChange={updateNewTask}/>
-	<button id="btn" onClick={add}>Add</button>
-	</div>
+		<div id="main">
+			<h1 className="heading">To Do List</h1>
+			{list}
+			<div className="inputField">
+				<input id="task" className="text-input-1" onChange={updateNewTask} placeholder="Enter new item here" autoFocus />
+				<button id="btn" className="btn btn-right btn-blue" onClick={add}>Add</button>
+			</div>
+			<link rel="preconnect" href="https://fonts.gstatic.com" />
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+		</div>
 	);
 }
 
