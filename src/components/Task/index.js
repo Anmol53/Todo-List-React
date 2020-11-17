@@ -25,7 +25,7 @@ export default function Task(props){
       <p className="text-display">{text}</p>
       { !editable ? (<button className="edit btn btn-pink bl no-l-radius" onClick={() => setEditable(true)}>Edit</button>) : null }
       { !editable ? (<button className="delete btn btn-pink btn-right bl no-l-radius" onClick={() => props.deleteCallback(props.index)}>Delete</button>) : null }
-      { editable ? (<input className="editTask text-input no-l-radius" onChange={updateText}/>) : null }
+      { editable ? (<input type="text" className="editTask text-input text-input-pink no-l-radius" onChange={updateText}  placeholder="Edit item here" autoFocus/>) : null }
       { editable ? (<button className="saveTask btn btn-pink btn-right" onClick={editText}>Save</button>) : null }
     </li>
   );

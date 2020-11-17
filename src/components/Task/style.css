@@ -24,16 +24,22 @@
 .text-input{
   margin: 0;
   width: 100%;
-  border: 3px solid #ff2e63;
-  background-color: #252a34;
   border-right: none;
-  padding: 5px;
-  height: 20px;
   line-height: 1.2;
   font-size: 1.2rem;
+  padding: 5px;
+  height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #ff2e63;
+}
+
+.text-input-pink{
+    border: 3px solid #ff2e63;
+    color: #ff2e63;
+}
+.text-input-pink::placeholder{
+    color: #ff2e63;
+    opacity: 0.5;
 }
 
 .btn{
@@ -47,6 +53,7 @@
   padding: .1rem .4rem;
   font-weight: bold;
 }
+
 .btn-pink{
     border: 1px solid #ff2e63;
     background: #ff2e63;
