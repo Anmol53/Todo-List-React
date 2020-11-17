@@ -84,7 +84,7 @@ function App() {
 
   useEffect(() => {
     theme();
-  });
+  }, [dark]);
 
   return (
     <div id="main">

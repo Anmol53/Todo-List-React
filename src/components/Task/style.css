@@ -1,13 +1,13 @@
-.list{
+.list-enclosure {
   width: 100%;
   position: relative;
   padding: 0;
   display: flex;
   margin: 1rem 0px;
-  list-style-type:none;
+  list-style-type: none;
 }
 
-.text-display{
+.text-display {
   margin: 0;
   width: 100%;
   border: 3px solid #ff2e63;
@@ -21,7 +21,7 @@
   color: #252a34;
 }
 
-.text-input{
+.text-input {
   margin: 0;
   width: 100%;
   border-right: none;
@@ -33,38 +33,38 @@
   outline: none;
 }
 
-.text-input-pink{
-    border: 3px solid #ff2e63;
-    color: #ff2e63;
+.text-input-pink {
+  border: 3px solid #ff2e63;
+  color: #ff2e63;
 }
-.text-input-pink::placeholder{
-    color: #ff2e63;
-    opacity: 0.5;
+.text-input-pink::placeholder {
+  color: #ff2e63;
+  opacity: 0.5;
 }
 
-.btn{
+.btn {
   width: 80px;
   height: 36px;
   text-align: center;
   color: #252a34;
   cursor: pointer;
   outline: none;
-  font-size: .9rem;
-  padding: .1rem .4rem;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.4rem;
   font-weight: bold;
 }
 
-.btn-pink{
-    border: 1px solid #ff2e63;
-    background: #ff2e63;
+.btn-pink {
+  border: 1px solid #ff2e63;
+  background: #ff2e63;
 }
-.btn-right{
+.btn-right {
   border-radius: 0 5px 5px 0;
 }
-.bl{
-    border-left: 1px solid #eaeaea;
+.bl {
+  border-left: 1px solid #eaeaea;
 }
-.no-l-radius{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+.no-l-radius {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
