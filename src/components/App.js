@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../styles/App.css";
 import Task from "./Task/";
+import Cursor from "./Cursor/";
 import "./style.css";
 
 function App() {
@@ -98,6 +99,7 @@ function App() {
 
   return (
     <div id="main">
+      <Cursor />
       {/*Dark theme Toggler*/}
       <div className="toggle">
         <span className="toggle-text">Dark Mode</span>
