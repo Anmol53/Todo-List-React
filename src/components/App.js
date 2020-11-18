@@ -8,6 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [dark, setDark] = useState(false);
 
+  // Add Item to List
   const add = () => {
     if (newTask != "") {
       const temp = [...tasks];
@@ -17,34 +18,29 @@ function App() {
     setNewTask("");
   };
 
+  // Delete ith item from List
   const deleteItem = (i) => {
-    // TODO: Delete console log
-    console.log(i);
     const temp = [...tasks];
     if (i > -1) {
       temp.splice(i, 1);
     }
     setTasks(temp);
-    // TODO: Delete console log
-    console.log("In delete " + tasks);
   };
 
+  // Edit ith item to updatedText.
   const editItem = (i, updatedText) => {
-    // TODO: Delete console log
-    console.log(">" + updatedText + "<");
     const temp = [...tasks];
     temp[i] = updatedText;
     setTasks(temp);
-    // TODO: Delete console log
-    console.log("In edit " + tasks);
   };
 
+  //Keep Track of new task input
   const updateNewTask = ({ target }) => {
     setNewTask(target.value);
   };
 
+  //Return unorder list of tasks
   const renderList = () => {
-    console.log(tasks);
     return (
       <ul>
         {tasks.map((val, index) => {
@@ -63,6 +59,7 @@ function App() {
     );
   };
 
+  //Toggle Dark Theme
   const theme = () => {
     if (dark) {
       document.body.classList.add("dark-body");
@@ -101,6 +98,7 @@ function App() {
 
   return (
     <div id="main">
+      {/*Dark theme Toggler*/}
       <div className="toggle">
         <span className="toggle-text">Dark Mode</span>
         <label className="switch">
@@ -108,6 +106,8 @@ function App() {
           <span className="slider round"></span>
         </label>
       </div>
+
+      {/*To-Do-List Card*/}
       <div className="card">
         <h1 className="heading">To Do List</h1>
         {renderList()}
