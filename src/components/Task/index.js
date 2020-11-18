@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./style.css";
 
 export default function Task(props) {
-  const [text, setText] = useState(props.text);
   const [editable, setEditable] = useState(false);
   const [editedText, setNewText] = useState("");
+
+  const darkInput = props.dark ? " dark-input" : "";
 
   const updateText = ({ target }) => {
     setNewText(target.value);
@@ -12,17 +13,17 @@ export default function Task(props) {
 
   const editText = () => {
     if (editedText != "") {
+      // TODO: Delete console log
       console.log(">" + editedText + "<");
-      setText(editedText);
+      props.editCallback(props.index, editedText);
       setEditable(false);
       setNewText("");
-      props.renderCallback();
     }
   };
 
   return (
     <li id="" className="list-enclosure">
-      <p className="list text-display">{text}</p>
+      <p className="list text-display">{props.text}</p>
       {!editable ? (
         <button
           className="edit btn btn-pink bl no-l-radius"
@@ -42,7 +43,7 @@ export default function Task(props) {
       {editable ? (
         <input
           type="text"
-          className="editTask text-input text-input-pink no-l-radius"
+          className={`editTask text-input text-input-pink no-l-radius${darkInput}`}
           onChange={updateText}
           placeholder="Edit item here"
           autoFocus

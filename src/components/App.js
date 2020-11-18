@@ -18,13 +18,25 @@ function App() {
   };
 
   const deleteItem = (i) => {
+    // TODO: Delete console log
     console.log(i);
     const temp = [...tasks];
     if (i > -1) {
       temp.splice(i, 1);
     }
     setTasks(temp);
+    // TODO: Delete console log
     console.log("In delete " + tasks);
+  };
+
+  const editItem = (i, updatedText) => {
+    // TODO: Delete console log
+    console.log(">" + updatedText + "<");
+    const temp = [...tasks];
+    temp[i] = updatedText;
+    setTasks(temp);
+    // TODO: Delete console log
+    console.log("In edit " + tasks);
   };
 
   const updateNewTask = ({ target }) => {
@@ -42,7 +54,8 @@ function App() {
               text={val}
               index={index}
               deleteCallback={deleteItem}
-              renderCallback={renderList}
+              editCallback={editItem}
+              dark={dark}
             />
           );
         })}
